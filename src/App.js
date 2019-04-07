@@ -1,28 +1,22 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Todos from './components/Todos'
+import React, { Component } from 'react'
+import './App.css'
 
 class App extends Component {
+  state = {
+    people: [
+     { name: 'lisa', age: 65, color: 'green'},
+     { name: 'karl', age: 7, color: 'blue'},
+     { name: 'anna', age: 34, color: 'pink'}
+    ]
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <Todos people={this.state.people} />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
